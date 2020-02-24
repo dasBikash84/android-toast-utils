@@ -10,48 +10,54 @@ import com.dasbikash.android_extensions.runIfNotDestroyed
 import com.dasbikash.android_extensions.runOnMainThread
 import com.dasbikash.android_extensions.runWithContext
 
-object ToastUtils {
-    /**
-     * Method to display short toast message
-     *
-     * @param context | Android Context
-     * @param message | message for toast
-     * */
-    fun showShortToast(context: Context, message: String) {
-        runOnMainThread({
-            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-        })
+class ToastUtils {
+    companion object {
+        /**
+         * Method to display short toast message
+         *
+         * @param context | Android Context
+         * @param message | message for toast
+         * */
+        @JvmStatic
+        fun showShortToast(context: Context, message: String) {
+            runOnMainThread({
+                Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+            })
+        }
+
+        /**
+         * Method to display short toast message
+         *
+         * @param context | Android Context
+         * @param messageId | string resource Id for toast
+         * */
+        @JvmStatic
+        fun showShortToast(context: Context, @StringRes messageId: Int) =
+            showShortToast(context, context.getString(messageId))
+
+        /**
+         * Method to display long toast message
+         *
+         * @param context | Android Context
+         * @param message | message for toast
+         * */
+        @JvmStatic
+        fun showLongToast(context: Context, message: String) {
+            runOnMainThread({
+                Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+            })
+        }
+
+        /**
+         * Method to display long toast message
+         *
+         * @param context | Android Context
+         * @param messageId | string resource Id for toast
+         * */
+        @JvmStatic
+        fun showLongToast(context: Context, @StringRes messageId: Int) =
+            showLongToast(context, context.getString(messageId))
     }
-
-    /**
-     * Method to display short toast message
-     *
-     * @param context | Android Context
-     * @param messageId | string resource Id for toast
-     * */
-    fun showShortToast(context: Context, @StringRes messageId: Int) =
-        showShortToast(context,context.getString(messageId))
-
-    /**
-     * Method to display long toast message
-     *
-     * @param context | Android Context
-     * @param message | message for toast
-     * */
-    fun showLongToast(context: Context, message: String) {
-        runOnMainThread({
-            Toast.makeText(context, message, Toast.LENGTH_LONG).show()
-        })
-    }
-
-    /**
-     * Method to display long toast message
-     *
-     * @param context | Android Context
-     * @param messageId | string resource Id for toast
-     * */
-    fun showLongToast(context: Context, @StringRes messageId: Int) =
-        showLongToast(context, context.getString(messageId))
 }
 
 /**
