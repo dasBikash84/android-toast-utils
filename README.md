@@ -28,6 +28,39 @@ dependencies {
 - Extension functions provided for direct calling from `Activity` / `AppCompatActivity` / `Fragment` class body.
 - If toast launched using `Activity` / `AppCompatActivity` / `Fragment` extension function, then it will be shown only if subject component is not destroyed.
 
+## Usage Example
+
+##### To display toast message from `Activity` / `AppCompatActivity` / `Fragment` class body
+```
+    //To show short toast of given message
+    showShortToast(message)
+    
+    //To show short toast of given message string resource
+    showShortToast(messageId)
+    
+    //To show long toast of given message
+    showLongToast(message)
+    
+    //To show long toast of given message string resource
+    showLongToast(messageId)
+```
+
+
+##### To display toast message from Any class
+```
+    //To show short toast of given message
+    ToastUtils.showShortToast(context,message)
+    
+    //To show short toast of given message string resource
+    ToastUtils.showShortToast(context,messageId)
+    
+    //To show long toast of given message
+    ToastUtils.showLongToast(context,message)
+    
+    //To show long toast of given message string resource
+    ToastUtils.showLongToast(context,messageId)
+```
+
 ##  License
 --------
 
