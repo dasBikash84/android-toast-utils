@@ -34,13 +34,13 @@ dependencies {
 ```
     //To show short toast of given message
     showShortToast(message)
-    
+	//or
     //To show short toast of given message string resource
     showShortToast(messageId)
-    
+	//or
     //To show long toast of given message
     showLongToast(message)
-    
+	//or
     //To show long toast of given message string resource
     showLongToast(messageId)
 ```
@@ -50,13 +50,13 @@ dependencies {
 ```
     //To show short toast of given message
     ToastUtils.showShortToast(context,message)
-    
+	//or    
     //To show short toast of given message string resource
     ToastUtils.showShortToast(context,messageId)
-    
+	//or    
     //To show long toast of given message
     ToastUtils.showLongToast(context,message)
-    
+	//or    
     //To show long toast of given message string resource
     ToastUtils.showLongToast(context,messageId)
 ```
