@@ -6,9 +6,9 @@ import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.dasbikash.android_extensions.runIfNotDestroyed
-import com.dasbikash.android_extensions.runOnMainThread
-import com.dasbikash.android_extensions.runWithContext
+//import com.dasbikash.android_extensions.runIfNotDestroyed
+//import com.dasbikash.android_extensions.runOnMainThread
+//import com.dasbikash.android_extensions.runWithContext
 
 class ToastUtils {
     companion object {
@@ -150,7 +150,7 @@ fun AppCompatActivity.showShortToast(@StringRes messageId: Int)
  * @param message Toast message
  * */
 fun Fragment.showLongToast(message: String){
-    runWithContext {
+    context?.let {
         ToastUtils.showLongToast(it, message)
     }
 }
@@ -169,7 +169,7 @@ fun Fragment.showLongToast(@StringRes messageId: Int)
  * @param message Toast message
  * */
 fun Fragment.showShortToast(message: String){
-    runWithContext {
+    context?.let {
         ToastUtils.showShortToast(it,message)
     }
 }
