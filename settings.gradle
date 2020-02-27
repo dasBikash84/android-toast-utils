@@ -1,2 +1,2 @@
-include ':app'
+include ':android-toast-utils'
 rootProject.name='Android Toast Utils'
